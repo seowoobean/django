@@ -1,0 +1,10 @@
+{% block content %}
+<h1>Articles for {{ year }}</h1>
+
+{% for article in article_list %}
+<div style="background-color: beige;">
+    <a href="{% url 'news:headline' article.headline %}">{{ article.headline }}</a></p>
+    <p>By {{ article.reporter.full_name }}</p>
+    <p>Published {{ article.pub_date|date:"F j, Y" }}</p></div>
+{% endfor %}
+{% endblock %}
